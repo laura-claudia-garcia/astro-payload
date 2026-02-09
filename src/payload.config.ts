@@ -4,6 +4,8 @@ import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
+import { SupportCategories } from './collections/SupportCategories'
+import { SupportPages } from './collections/SupportPages'
 import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
@@ -19,6 +21,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   admin: {
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
@@ -60,8 +63,9 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URL || '',
   }),
-  collections: [Pages, Posts, Media, Categories, Users],
-  cors: [getServerSideURL()].filter(Boolean),
+  collections: [SupportCategories, SupportPages, Pages, Posts, Media, Categories, Users],
+  cors: [process.env.FRONTEND_URL, getServerSideURL()].filter((v): v is string => Boolean(v)),
+  csrf: [process.env.FRONTEND_URL, getServerSideURL()].filter((v): v is string => Boolean(v)),
   globals: [Header, Footer],
   plugins,
   secret: process.env.PAYLOAD_SECRET,

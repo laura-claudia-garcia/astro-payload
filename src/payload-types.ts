@@ -67,6 +67,8 @@ export interface Config {
   };
   blocks: {};
   collections: {
+    'support-categories': SupportCategory;
+    'support-pages': SupportPage;
     pages: Page;
     posts: Post;
     media: Media;
@@ -89,6 +91,8 @@ export interface Config {
     };
   };
   collectionsSelect: {
+    'support-categories': SupportCategoriesSelect<false> | SupportCategoriesSelect<true>;
+    'support-pages': SupportPagesSelect<false> | SupportPagesSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -147,6 +151,36 @@ export interface UserAuthOperations {
     email: string;
     password: string;
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "support-categories".
+ */
+export interface SupportCategory {
+  id: string;
+  title: string;
+  slug: string;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "support-pages".
+ */
+export interface SupportPage {
+  id: string;
+  title: string;
+  slug: string;
+  category: string | SupportCategory;
+  order?: number | null;
+  /**
+   * Write Markdown (recommended for Starlight).
+   */
+  body: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -969,6 +1003,14 @@ export interface PayloadLockedDocument {
   id: string;
   document?:
     | ({
+        relationTo: 'support-categories';
+        value: string | SupportCategory;
+      } | null)
+    | ({
+        relationTo: 'support-pages';
+        value: string | SupportPage;
+      } | null)
+    | ({
         relationTo: 'pages';
         value: string | Page;
       } | null)
@@ -1049,6 +1091,31 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "support-categories_select".
+ */
+export interface SupportCategoriesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "support-pages_select".
+ */
+export interface SupportPagesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  category?: T;
+  order?: T;
+  body?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
