@@ -1,0 +1,28 @@
+{
+  "node": {
+    "40336c2a082988ad01ad9b54b07c2c43b8fedc27de": {
+      "workers": {
+        "app/(payload)/admin/[[...segments]]/page": {
+          "moduleId": "(rsc)/./node_modules/.pnpm/next@15.4.11_@babel+core@7.29.0_@playwright+test@1.56.1_react-dom@19.2.1_react@19.2.1__react@19.2.1_sass@1.77.4/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Flauragarcia%2Fkisslabs%2Fpayload%2Fastro-payload%2Fsrc%2Fapp%2F(payload)%2Flayout.tsx%22%2C%5B%7B%22id%22%3A%2240336c2a082988ad01ad9b54b07c2c43b8fedc27de%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%2C%5B%22%2FUsers%2Flauragarcia%2Fkisslabs%2Fpayload%2Fastro-payload%2Fnode_modules%2F.pnpm%2F%40payloadcms%2Bnext%403.75.0_%40types%2Breact%4019.2.9_graphql%4016.12.0_monaco-editor%400.55.1_next%401_7c302b43344830df81b62e3a9dc5346d%2Fnode_modules%2F%40payloadcms%2Fnext%2Fdist%2Flayouts%2FRoot%2Findex.js%22%2C%5B%7B%22id%22%3A%2260a2beff482d8f7527b97e2bb060fe8e10910b1de0%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(payload)/admin/[[...segments]]/page": "rsc"
+      }
+    },
+    "60a2beff482d8f7527b97e2bb060fe8e10910b1de0": {
+      "workers": {
+        "app/(payload)/admin/[[...segments]]/page": {
+          "moduleId": "(rsc)/./node_modules/.pnpm/next@15.4.11_@babel+core@7.29.0_@playwright+test@1.56.1_react-dom@19.2.1_react@19.2.1__react@19.2.1_sass@1.77.4/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Flauragarcia%2Fkisslabs%2Fpayload%2Fastro-payload%2Fsrc%2Fapp%2F(payload)%2Flayout.tsx%22%2C%5B%7B%22id%22%3A%2240336c2a082988ad01ad9b54b07c2c43b8fedc27de%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%2C%5B%22%2FUsers%2Flauragarcia%2Fkisslabs%2Fpayload%2Fastro-payload%2Fnode_modules%2F.pnpm%2F%40payloadcms%2Bnext%403.75.0_%40types%2Breact%4019.2.9_graphql%4016.12.0_monaco-editor%400.55.1_next%401_7c302b43344830df81b62e3a9dc5346d%2Fnode_modules%2F%40payloadcms%2Fnext%2Fdist%2Flayouts%2FRoot%2Findex.js%22%2C%5B%7B%22id%22%3A%2260a2beff482d8f7527b97e2bb060fe8e10910b1de0%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/(payload)/admin/[[...segments]]/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "z/MFq/O3K6egAoIrekvgJy1LBvj1Zgf7SpDak0yYlSg="
+}

@@ -1,7 +1,11 @@
 import type { CollectionConfig } from 'payload'
+import { anyone } from '../access/anyone'
 
 export const SupportCategories: CollectionConfig = {
   slug: 'support-categories',
+  access: {
+    read: anyone,
+  },
   admin: { useAsTitle: 'title' },
   fields: [
     { name: 'title', type: 'text', required: true },
